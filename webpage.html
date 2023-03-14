@@ -1,0 +1,113 @@
+<html>
+	<head>
+		<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+		<style>
+			h2{
+				text-align: center;
+				font-size:24px;
+			}
+			div.main{
+				width:320px;
+			/*	float:left; */
+				padding: 10px 55px 40px;
+				background-color: #bbffb8a6;
+				border: 15px solid white;
+				box-shadow: 0 0 10px;
+				border-radius: 2px;
+				font-size: 13px;
+			}
+			input[type=text],[type=email],[type=password] {
+				width: 98%;
+				height: 34px;
+				padding-left: 5px;
+				margin-top: 8px;
+				box-shadow 0 0 5px #00F5FF;
+				border: 2px solid #00F5FF;
+				color: #4f4f4f;
+				font-size: 16px;
+			}
+			label {
+				color: #464646;
+				text-shadow: 0 1px 0 #fff;
+				font-size: 14px;
+				font-weight: bold;
+			}
+			#register {
+				font-size: 20px;
+				margin-top: 15px;
+				background: linear-gradient(#22abe9 5%, #36caf0 100%);
+				border: 1px solid #0F799E;
+				padding: 7px 35px;
+				color:white;
+				text-shadow:0px 1px 0px #13506D;
+				font-weight: bold;
+				border-radius: 2px;
+				cursor: pointer;
+				width: 100%
+			}
+			#register:hover {
+				background: linear-gradient(#36caf0 5%, #22abe9 100%);
+			}
+			#p1 {
+				float: left;
+				margin: 0px 0px 0px 0px !important;
+				color:red;
+			}
+			.email {
+				margin-top: 10px;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<center>
+			<div class="main">
+				<h2>Form Validation</h2>
+				<form class="frm" method="Post">
+					<label>First Name:</label></br>
+					<input type="text" name="fname" id="name" placeholder="Enter Your First Name" ></input>
+					<p id="p1"></p>
+					</br></br>
+					<label class="email">Email:</label></br>
+					<input type="email" name="email" id="email" placeholder="Enter Your Email Address" ></input>
+					<p id="p2"></p>
+					</br></br>
+					<label>Password:</label></br>
+					<input type="password" name="password" id="password" placeholder="Enter Your Password" ></input></br></br>
+					<label>Confirm Password:</label></br>
+					<input type="password" name="cpassword" id="cpassword" placeholder="Enter Your Confirm Password" ></input></br></br>
+					<input type="submit" id="register"></input>
+				</form>
+			</div>
+		</center>
+		<script>
+			 $(document).ready(function() {
+				$('#register').click(function() {
+					var name = $('#name').val();
+					var email = $('#email').val();
+					var password = $('#password').val();
+					var cpassword = $('#cpassword').val();
+					
+					if(name.length == "")
+					{
+						$("#p1").text("Please Enter Your Name");
+						$("#name").focus();
+						return false;
+					}
+										
+					//	 if (email.length == 0) {
+						//		$("#email").parent().after("<div class='validation' style='color:red;margin-bottom: 20px;'>Please enter email address</div>");
+						//	}
+						//	else {
+						//	e.preventDefault(); // prevent form from POST to server
+						//	$('#email').focus();
+						//	$("#email").parent().next(".validation").remove(); // remove it
+						//	focusSet = true;
+						//}
+				});
+			 });
+		</script>
+		<script>
+		</script>
+	</body>
+</html>
